@@ -35,7 +35,7 @@ $_$;
 DROP TRIGGER IF EXISTS create_twitter_tweet_index_trigger ON twitter_tweet_indexes;
 CREATE TRIGGER create_twitter_tweet_index_trigger 
 AFTER INSERT ON twitter_tweet_indexes
-FOR EACH ROW EXECUTE FUNCTION create_twitter_tweet_index();
+FOR EACH ROW EXECUTE PROCEDURE create_twitter_tweet_index();
 
 --
 -- Trigger to delete trigger when removing row from twitter_tweet_indexes
@@ -57,7 +57,7 @@ $_$;
 DROP TRIGGER IF EXISTS drop_twitter_tweet_index_trigger ON twitter_tweet_indexes;
 CREATE TRIGGER drop_twitter_tweet_index_trigger 
 AFTER DELETE ON twitter_tweet_indexes
-FOR EACH ROW EXECUTE FUNCTION drop_twitter_tweet_index();
+FOR EACH ROW EXECUTE PROCEDURE drop_twitter_tweet_index();
 
 
 --
@@ -76,4 +76,4 @@ $_$;
 DROP TRIGGER IF EXISTS update_twitter_tweet_index_trigger ON twitter_tweet_indexes;
 CREATE TRIGGER update_twitter_tweet_index_trigger 
 BEFORE UPDATE ON twitter_tweet_indexes
-FOR EACH ROW EXECUTE FUNCTION update_twitter_tweet_index();
+FOR EACH ROW EXECUTE PROCEDURE update_twitter_tweet_index();
